@@ -33,43 +33,46 @@ class AnimatedContainerWidgetState extends State<AnimatedContainerWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        AnimatedOpacity(
-          opacity: _opacity,
-          duration: const Duration(seconds: 1),
-          child: AnimatedContainer(
-            width: width,
-            height: height,
-            color: color,
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical:40.0),
+      child: Column(
+        // mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          AnimatedOpacity(
+            opacity: _opacity,
             duration: const Duration(seconds: 1),
+            child: AnimatedContainer(
+              width: width,
+              height: height,
+              color: color,
+              duration: const Duration(seconds: 1),
+            ),
           ),
-        ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: ElevatedButton(
-                onPressed: () {
-                  animateContainer();
-                },
-                child: const Text('Animate'),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: ElevatedButton(
+                  onPressed: () {
+                    animateContainer();
+                  },
+                  child: const Text('Animate container'),
+                ),
               ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: ElevatedButton(
-                onPressed: () {
-                  changeOpacity();
-                },
-                child: const Text('change opacity'),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: ElevatedButton(
+                  onPressed: () {
+                    changeOpacity();
+                  },
+                  child: const Text('Change opacity'),
+                ),
               ),
-            ),
-          ],
-        ),
-      ],
+            ],
+          ),
+        ],
+      ),
     );
   }
 }
