@@ -13,6 +13,8 @@ class AnimatedContainerWidgetState extends State<AnimatedContainerWidget> {
   double height = 100;
   Color color = Colors.purple;
   bool isAnimated = false;
+  double _opacity = 1.0;
+
 
   void animateContainer() {
     setState(() {
@@ -23,22 +25,48 @@ class AnimatedContainerWidgetState extends State<AnimatedContainerWidget> {
     });
   }
 
+  void changeOpacity() {
+    setState(() {
+      _opacity = _opacity == 1.0 ? 0.0 : 1.0;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
-      children: <Widget>[
-        AnimatedContainer(
-          width: width,
-          height: height,
-          color: color,
+      children: [
+        AnimatedOpacity(
+          opacity: _opacity,
           duration: const Duration(seconds: 1),
+          child: AnimatedContainer(
+            width: width,
+            height: height,
+            color: color,
+            duration: const Duration(seconds: 1),
+          ),
         ),
-        ElevatedButton(
-          onPressed: () {
-            animateContainer();
-          },
-          child: const Text('Animate'),
+        Row(
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: ElevatedButton(
+                onPressed: () {
+                  animateContainer();
+                },
+                child: const Text('Animate'),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: ElevatedButton(
+                onPressed: () {
+                  changeOpacity();
+                },
+                child: const Text('change opacity'),
+              ),
+            ),
+          ],
         ),
       ],
     );
