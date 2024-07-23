@@ -47,6 +47,7 @@ class AnimatedContainerWidgetState extends State<AnimatedContainerWidget> {
           ),
         ),
         Row(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Padding(
               padding: const EdgeInsets.all(8.0),
