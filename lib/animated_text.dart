@@ -12,36 +12,38 @@ class AnimatedTextState extends State<AnimatedText> {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        AnimatedDefaultTextStyle(
-          style: _isChanged
-              ? const TextStyle(
-                  fontSize: 30.0,
-                  color: Colors.cyan,
-                  fontWeight: FontWeight.bold,
-                )
-              : const TextStyle(
-                  fontSize: 20.0,
-                  color: Colors.purple,
-                  fontWeight: FontWeight.normal,
-                ),
-          duration: const Duration(seconds: 1),
-          child: const Text('This is an Animated Text'),
-        ),
-        Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: ElevatedButton(
-            onPressed: () {
-              setState(() {
-                _isChanged = !_isChanged;
-              });
-            },
-            child: const Text('Animate text'),
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical:20.0),
+      child: Column(
+        children: [
+          AnimatedDefaultTextStyle(
+            style: _isChanged
+                ? const TextStyle(
+                    fontSize: 30.0,
+                    color: Colors.cyan,
+                    fontWeight: FontWeight.bold,
+                  )
+                : const TextStyle(
+                    fontSize: 20.0,
+                    color: Colors.purple,
+                    fontWeight: FontWeight.normal,
+                  ),
+            duration: const Duration(seconds: 1),
+            child: const Text('This is an Animated Text'),
           ),
-        ),
-      ],
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: ElevatedButton(
+              onPressed: () {
+                setState(() {
+                  _isChanged = !_isChanged;
+                });
+              },
+              child: const Text('Animate text'),
+            ),
+          ),
+        ],
+      ),
     );
   }
 }

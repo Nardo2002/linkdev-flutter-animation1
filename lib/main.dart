@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'animated_container.dart';
 import 'animated_text.dart';
+import 'animated_list.dart';
 
 void main() {
   runApp(const MainApp());
@@ -18,14 +19,16 @@ class MainApp extends StatelessWidget {
           centerTitle: true,
           backgroundColor: Colors.deepPurple[100],
         ),
-        body: const SingleChildScrollView(
-          child: Column(          
+        body:
+       const SingleChildScrollView(
+         child: Column(          
             children: [
               AnimatedContainerWidget(),
               AnimatedText(),
-            ],
+              AnimatedListItems(),
+              ],
           ),
-        ),
+       ),
       ),
     );
   }
