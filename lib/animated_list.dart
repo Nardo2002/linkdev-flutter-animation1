@@ -64,7 +64,7 @@ class AnimatedListItemsState extends State<AnimatedListItems> {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: const EdgeInsets.only(top: 8.0),
             child: ElevatedButton(
               onPressed: () {
                 _addItem();

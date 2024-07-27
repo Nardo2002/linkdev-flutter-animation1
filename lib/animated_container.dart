@@ -38,6 +38,7 @@ class AnimatedContainerWidgetState extends State<AnimatedContainerWidget> {
       child: Column(
         children: [
           AnimatedOpacity(
+            curve: Curves.easeInOut,
             opacity: _opacity,
             duration: const Duration(seconds: 1),
             child: AnimatedContainer(

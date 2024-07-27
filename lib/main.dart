@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'animated_container.dart';
 import 'animated_text.dart';
 import 'animated_list.dart';
+import 'animated_positioned.dart';
 
 void main() {
   runApp(const MainApp());
@@ -26,6 +27,7 @@ class MainApp extends StatelessWidget {
               AnimatedContainerWidget(),
               AnimatedText(),
               AnimatedListItems(),
+              AnimatedPositionedWidget(),
               ],
           ),
        ),
