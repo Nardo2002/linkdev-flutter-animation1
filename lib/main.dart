@@ -3,6 +3,7 @@ import 'animated_container.dart';
 import 'animated_text.dart';
 import 'animated_list.dart';
 import 'animated_positioned.dart';
+import 'animated_switcher.dart';
 
 void main() {
   runApp(const MainApp());
@@ -28,6 +29,7 @@ class MainApp extends StatelessWidget {
               AnimatedText(),
               AnimatedListItems(),
               AnimatedPositionedWidget(),
+              AnimatedSwitcherWidget(),
               ],
           ),
        ),
